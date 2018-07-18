@@ -1,0 +1,167 @@
+
+/* custom */
+img{
+  max-width: 100%;
+  margin: 10px 0;
+  border: 1px solid #efefef;
+}
+h1{
+      font-size: 2.8rem;
+}
+.profile-pic{
+  margin: 0 auto !important;
+    width: 100%;
+}
+.related-posts h3 {
+    font-size: 14px;
+}
+.related-posts-heading{
+  font-size: 24px;
+  margin-top: 10%;
+}
+a{
+  color: #266eaf;
+}
+html, body, h1, h2, h3, h4, h5, h6, p, li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  color: #555;
+  line-height: 1.8em;
+}
+
+.banner h1, .lead, #sidebar-buttons li{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+.banner h1 a{
+  color: #333;
+}
+ a:hover, a:visited, a:active{
+  text-decoration: none;
+}
+
+
+
+.post-title-multi{
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-top: 10px;
+}
+
+.lead{
+  margin-bottom: 0;
+    color: #666;
+font-size: 1.6rem;
+}
+.banner {
+  margin-top: 8%;
+  margin-bottom: 2%;
+}
+/*
+@media (min-width: 768px){
+  .banner {
+    margin-top: 15%;
+    margin-bottom: 5%;
+  }
+}
+*/
+@media (max-width: 768px){
+/*  .profile-pic{
+    display:none;
+  }
+*/
+}
+@media (min-width: 768px){
+  .lead {
+      font-weight: 400;
+      color: #999;
+  }
+  .post-title-multi .post-date {
+  }
+  .social-nav-links {
+  }
+}
+
+.sidebar-about h1{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 3rem;
+}
+.post-date{
+  color: #999;
+  font-weight: 400;
+}
+
+.post-title-multi a {
+    color: #555;
+}
+
+.post-title-multi a:hover {
+    color: #266eaf;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2em;
+
+}
+
+.sidebar-nav-item{
+  margin-right: 10px;
+}
+
+.list-publication li p{
+  margin-bottom: 0;
+}
+.list-publication li small{
+  color: #999;
+}
+.list-publication li {
+  margin-bottom: 15px;
+}
+.project .title{
+      margin-bottom: 0;
+}
+.project {
+  margin-bottom: 20px;
+}
+.color-999 p, .color-999 {
+  color: #999;
+}
+h1.post-title {
+    font-size: 2.8rem;
+}
+.posts-in-year {
+
+
+}
+.post-title .fa{
+  color: #266eaf;
+  font-weight: bold;
+}
+h4.year{
+  margin-top: 40px;
+  color: #555;
+  border-left: 5px solid #266eaf;
+  padding-left: 5px;
+  font-size: 2.5rem;
+}
+.text-underline{
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0px;
+}
+
+ul.posts-in-year.list-unstyled {
+    border-bottom: 1px solid #eee;
+}
+.post-content-small p{
+  margin-bottom: 0;
+}
+.post-title p{
+  color: #888;
+}
+.primary{
+  color: #266eaf;
+}
+.error-404{
+  /*margin-top:5%;*/
+}

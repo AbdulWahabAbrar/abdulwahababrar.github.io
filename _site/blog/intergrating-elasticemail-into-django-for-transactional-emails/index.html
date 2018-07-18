@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link href="//gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>
+         Integrating elasticemail.com into django project for transactional emails. &middot; Ravi Raja Merugu 
+    </title>
+
+    <!-- CSS 474588-->
+    <!-- Latest compiled and minified CSS -->
+
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/public/css/main.css?v=1231241242111" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/public/favicon.ico?v=1231241242111">
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99604121-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+
+
+<body>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-3 col-sm-4">
+              
+<div class="banner">
+    <div class="sidebar-about">
+        <!-- <p style="margin-left:30px">
+            <i class="fa fa-circle-o faa-burst animated magic-icon"></i></p> -->
+
+            <ul class="list-inline social-nav-links" id="sidebar-buttons">
+              <!-- <li>
+                  <a href="/" class="btn-social btn-outline" title="Home">
+                      <i class="fa fa-home"></i> Home
+                  </a>
+              </li> -->
+                <li>
+                    <a href="https://twitter.com/rrmerugu"  target="_blank" class="btn-social btn-outline" title="RR on Twitter">
+                        <i class="fa fa-fw fa-twitter"></i> Twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/rrmerugu" target="_blank" class="btn-social btn-outline" title="Ravi Raja on GitHub">
+                        <i class="fa fa-fw fa-github"></i> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/rrmerugu" target="_blank" class="btn-social btn-outline" title="Ravi Raja on LinkedIn">
+                        <i class="fa fa-fw fa-linkedin"></i> LinkedIn
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+            <a href="/">
+            <img src="/public/img/me.png" alt="Ravi Raja Merugu" class="img-responsive profile-pic">
+            </a>
+        <h1 style="border:none;">
+        <a href="/">
+          Ravi Raja Merugu
+        </a>
+      </h1>
+        <p class="lead">Python, Web and Data</p>
+        <p class="">Digging deep and mining the Data; Building technology driven Web Applications.</p>
+
+    </div>
+
+    <nav class="">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+            <a class="sidebar-nav-item" href="/posts/">Blogs</a>
+
+            <a class="sidebar-nav-item" href="/codes/">Codes</a>
+            <a class="sidebar-nav-item" href="/talks/">Talks</a>
+            <a class="sidebar-nav-item" href="/research/">Research</a>
+            <a class="sidebar-nav-item" href="/snippets/">Snippets</a>
+            <a class="sidebar-nav-item" href="/about/">About</a>
+
+     </nav>
+
+
+
+
+</div>
+
+          </div>
+          <div class="col-md-9 col-sm-8">
+            <div class="row">
+  <div class="col-md-12">
+    <div class="post">
+      <h1 class="post-title">Integrating elasticemail.com into django project for transactional emails.</h1>
+      <span class="post-date"><i class="fa fa-calendar"></i> 23 Jan 2017</span>
+      <hr>
+      <p><a href="https://www.elasticemail.com">Elastiemail</a> as the website says is a email delivery tools provider,
+ you can send transactional as well as promotional emails.</p>
+
+<p>I’ve written a <code class="highlighter-rouge">EMAILBACKEND</code> class that allows you to send emails in django project using elasticemail.com</p>
+
+<!--/excerpt-->
+
+<p>Here is how to use it.</p>
+
+<ol>
+  <li>
+    <p>Install the package via git <code class="highlighter-rouge">git install -e git+https://github.com/rrmerugu/django_elasticemail</code></p>
+  </li>
+  <li>
+    <p>Add <code class="highlighter-rouge">django_elasticemail</code> to <code class="highlighter-rouge">INSTALLED_APPS</code></p>
+  </li>
+  <li>
+    <p>In <code class="highlighter-rouge">settings.py</code> add <code class="highlighter-rouge">EMAIL_BACKEND = "django_elasticemail.mail.ElasticEmailBackend"</code></p>
+  </li>
+</ol>
+
+<h2 id="usage">Usage</h2>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.core.mail</span> <span class="kn">import</span> <span class="n">EmailMultiAlternatives</span>
+
+
+<span class="n">email_message</span> <span class="o">=</span> <span class="n">EmailMultiAlternatives</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                            <span class="n">from_email</span><span class="o">=</span><span class="s">'xxx@gmail.com'</span><span class="p">,</span>  <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="s">'yy@gmail.com'</span><span class="p">,</span> <span class="s">'zz@outlook.com'</span><span class="p">])</span>
+<span class="n">email_message</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="s">'template-name'</span> <span class="c"># template with this name should be created in your elasticemail.com account</span>
+<span class="n">email_message</span><span class="o">.</span><span class="n">merge_vars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'text'</span><span class="p">:</span> <span class="s">'Hello World'</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">email_message</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
+
+</code></pre>
+</div>
+
+<p>Try it out. All the very best :)</p>
+
+    </div>
+
+
+    <div class="related">
+      <h2 class="related-posts-heading">Related Posts</h2>
+      <ul class="related-posts list-unstyled">
+        
+          <li>
+            <h3>
+              <a href="/snippet/hashtag-decomposition-twitter-data/">
+                Hashtag decomposition to extract more information about tweet during Twitter Topic Classification
+                <small>23 Jun 2017</small>
+              </a>
+            </h3>
+          </li>
+        
+          <li>
+            <h3>
+              <a href="/code/trawler-a-data-gathering-micro-framework/">
+                Trawler
+                <small>01 Jun 2017</small>
+              </a>
+            </h3>
+          </li>
+        
+          <li>
+            <h3>
+              <a href="/blog/ask-your-self/">
+                Ask yourself: is what I'm about to do going to make people smile? If the answer is yes, then do it 
+                <small>22 May 2017</small>
+              </a>
+            </h3>
+          </li>
+        
+      </ul>
+    </div>
+
+
+  </div>
+</div>
+
+          </div>
+      </div>
+  </div>
+
+
+    <footer class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <p class="small">&copy; 2017. Built with <i class="fa fa-heart"></i>
+        for Science and Technology. </p>
+
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+
+</html>

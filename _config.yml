@@ -1,0 +1,43 @@
+# Dependencies
+highlighter:      rouge
+
+
+# Permalinks
+permalink:              /:categories/:title/
+# relative_permalinks: true
+
+# Setup
+title:            M. Abdul Wahab Abrar
+tagline:          'Python, AI and Data'
+description:      'Data Scientist in the making .'
+url:              http://rsquarelabs.com
+release_id:       1231241242111
+baseurl:          /
+
+author:
+  name:           'M. Abdul Wahab Abrar'
+  url:            'https://twitter.com/abdulwahababrar'
+  email:          'abdulwahababrar@gmail.com'
+  github:         'https://github.com/AbdulWahabAbrar'
+  twitter:        'https://twitter.com/abdulwahababrar'
+  linkedin:       'https://www.linkedin.com/in/abdulwahababrar'
+
+
+collections:
+  - code
+  - blog
+  - talk
+  - snippet
+
+
+
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/abdulwahababrar/abdulwahababrar.github.io
+
+excerpt_separator: "<!--/excerpt-->"
+
+theme: jekyll-theme-minimal
